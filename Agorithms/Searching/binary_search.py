@@ -34,11 +34,11 @@ def binarySearch(arr, l, r, x):
 
 
 # Driver Code
-arr = [2, 3, 4, 10, 40]
-x = 10
+arr = [3, 4, 1,8,10,17,99,76,7,53,35,77]
+x = 17
 
 # Function call
-result = binarySearch(arr, 0, len(arr) - 1, x)
+result = binarySearch(sorted(arr), 0, len(arr) - 1, x)
 
 if result != -1:
     print("Element is present at index % d" % result)
