@@ -1,11 +1,12 @@
 #max heap  from binary tree
-
+import sys
 class MaxHeap:
     def __init__(self,maxsize):
         self.maxsize = maxsize
         self.size = 0
         self.Heap = [0] * (self.maxsize+1)
         self.FRONT = 1
+        self.Heap[0] = sys.maxsize
     
     #function to return the position of parent for the node currentl at pos
     def parent(self,pos):
@@ -41,7 +42,7 @@ class MaxHeap:
                     self.Heap[pos] < self.Heap[self.rightChild(pos)]):
 
                 #swap with the left child and heapify the left child
-                if(self.Heap[self.leftChild(pos)] > self.Heap[self.rightChild(pos)] > self.Heap[self.rightChild(pos)]):
+                if(self.Heap[self.leftChild(pos)] > self.Heap[self.rightChild(pos)]):
                     self.swap(pos, self.leftChild(pos))
                     self.maxHeapify(self.leftChild(pos))
 
